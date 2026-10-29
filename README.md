@@ -75,9 +75,11 @@ Notes on reproducibility:
 - E-G (Qwen2.5-1.5B-Instruct) reads its answers from `gpu_out/t1_eg_cache_hf_Qwen2.5-1.5B-Instruct.json` and
   finishes in seconds; without the cache it takes about 4.7 CPU-hours.
 - Quoted run times come from the first run on an AMD Ryzen 7 3700X (`gpu_out/v1.0_2026-10-23/`).
-- **Known issue:** `run_ec_ea.py` (E-C) does not run with the `hard_bench.py` in this release, which lacks the
-  `ctx_mode` argument that `run_first.py` passes. Its log `gpu_out/t1_ec_ea.txt` is from the run reported
-  in the paper. A fix will follow in the next release.
+- E-C compares eight groupings of Hard-2000, including three Context Veto forms selected by
+  `hard_bench.canon(..., ctx_mode=...)`: `"hard"` (minimum of value and context similarity), `"soft"`
+  (context similarity ≥ 0.5 counts as a match) and `"canon"` (context values clustered by complete linkage at
+  distance ε; two contexts match iff they share a cluster). Version 1.0.0 lacked `ctx_mode`, so
+  `run_ec_ea.py` failed; from 1.0.1 it reproduces `gpu_out/t1_ec_ea.txt` byte for byte.
 
 ## Data
 

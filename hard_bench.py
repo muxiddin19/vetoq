@@ -151,9 +151,28 @@ def components(S, eps):
     return connected_components(csr_matrix(S >= 1 - eps), directed=False)[1]
 
 
-def canon(df, col, backend, model, ctx_col=None):
+SOFT_THETA = 0.5     # soft veto threshold (E17); same as exp_t1/grouping.THETA
+
+
+def _canon_ctx(ctxs, backend, model):
+    """Pre-canonicalized veto (E17): cluster the context values by complete linkage at distance EPS;
+    two contexts match (similarity 1) iff they fall in the same cluster, else 0."""
+    from scipy.cluster.hierarchy import fcluster, linkage
+    from scipy.spatial.distance import squareform
+    if len(ctxs) == 1:
+        return np.ones((1, 1))
+    D = np.clip(1 - sim_matrix(ctxs, backend, model), 0, None)
+    np.fill_diagonal(D, 0)
+    D = np.maximum(D, D.T)
+    lab = fcluster(linkage(squareform(D, checks=False), "complete"), t=EPS, criterion="distance")
+    return (lab[:, None] == lab[None, :]).astype(float)
+
+
+def canon(df, col, backend, model, ctx_col=None, ctx_mode="hard"):
     """Per-row class labels for `col`; with ctx_col, Definition 8's veto
-    sim = min(sim(value), sim(context)) over distinct (value, context) combos."""
+    sim = min(sim(value), sim(context)) over distinct (value, context) combos.
+    ctx_mode: "hard" (as above), "soft" (context sim >= SOFT_THETA counts as 1),
+    "canon" (pre-canonicalized context: see _canon_ctx)."""
     if ctx_col is None:
         uniq = df[col].astype(str).unique().tolist()
         lab = dict(zip(uniq, components(sim_matrix(uniq, backend, model), EPS)))
@@ -161,7 +180,10 @@ def canon(df, col, backend, model, ctx_col=None):
     combos = list(dict.fromkeys(zip(df[col].astype(str), df[ctx_col].astype(str))))
     vals = list(dict.fromkeys(c[0] for c in combos))
     ctxs = list(dict.fromkeys(c[1] for c in combos))
-    Sv, Sc = sim_matrix(vals, backend, model), sim_matrix(ctxs, backend, model)
+    Sv = sim_matrix(vals, backend, model)
+    Sc = _canon_ctx(ctxs, backend, model) if ctx_mode == "canon" else sim_matrix(ctxs, backend, model)
+    if ctx_mode == "soft":
+        Sc = np.where(Sc >= SOFT_THETA, 1.0, Sc)
     vi = {v: i for i, v in enumerate(vals)}
     ci = {c: i for i, c in enumerate(ctxs)}
     a = np.array([vi[c[0]] for c in combos])
