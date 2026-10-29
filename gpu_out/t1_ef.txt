@@ -1,0 +1,18 @@
+[embedding_backend] loading sentence-transformers/all-MiniLM-L6-v2 on cpu
+
+[MusicBrainz-20K] {'rows': 19375, 'entities': 10000, 'distinct_titles': 18949, 'distinct_artists': 8934, 'combos': 19169, 'cand_pairs': 268613, 'kept_pairs': 6321}
+stage seconds: load=0.0, factorize=0.0, embed=35.6, tfidf=5.6, knn=7.5, score=10.8
+
+[MusicBrainz-200K] {'rows': 193750, 'entities': 100000, 'distinct_titles': 185997, 'distinct_artists': 65255, 'combos': 190944, 'cand_pairs': 2769460, 'kept_pairs': 122799}
+stage seconds: load=0.3, factorize=0.3, embed=109.4, tfidf=46.0, knn=404.8, score=166.8
+
+=== E-F: operator errors and total seconds at scale ===
+         dataset              method  pairF1   BMD  COUNT_err  CD_err  JOIN_FP_rate  JOIN_FN_rate  seconds
+ MusicBrainz-20K               exact  0.0218  9441     0.5872  0.8969        0.9233        0.9905   0.0000
+ MusicBrainz-20K                norm  0.0216  9461     0.6010  0.8949        0.9285        0.9905   0.0000
+ MusicBrainz-20K          hybrid-any  0.0567  6199    13.4395  0.3967        0.9699        0.6379  59.5870
+ MusicBrainz-20K hybrid-any+hardveto  0.3659  6012     0.4883  0.5636        0.4580        0.7287  59.6311
+MusicBrainz-200K               exact  0.0096 97993     2.0184  0.8631        0.9919        0.9884   0.0000
+MusicBrainz-200K                norm  0.0093 98281     2.2462  0.8600        0.9923        0.9883   0.0000
+MusicBrainz-200K          hybrid-any  0.0003 82645  1978.5184  0.1683        0.9998        0.6250 728.9341
+MusicBrainz-200K hybrid-any+hardveto  0.1349 66037     2.4194  0.5165        0.9104        0.7282 730.6968

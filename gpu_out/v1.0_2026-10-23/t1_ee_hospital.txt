@@ -1,0 +1,31 @@
+﻿witness noise: 0.034 of phone cells dirty
+[embedding_backend] loading sentence-transformers/all-MiniLM-L6-v2 on cpu
+
+=== Hospital: true error per candidate (mean over 20 join splits) ===
+                         true_Q1  true_Q2  true_Q3  mean
+method                                                  
+edit-any-0.1               0.106    0.089    0.121 0.105
+hybrid-any-0.1             0.106    0.089    0.121 0.105
+hybrid-all-0.1             0.105    0.133    0.123 0.120
+edit-all-0.1               0.105    0.133    0.123 0.120
+emb-all-0.2                0.066    0.400    0.090 0.185
+exact                      0.024    0.533    0.046 0.201
+norm                       0.024    0.533    0.046 0.201
+emb-any-0.1                0.068    0.444    0.094 0.202
+emb-all-0.1                0.068    0.444    0.094 0.202
+hybrid-all-0.2+softveto    0.431    0.133    0.444 0.336
+
+=== Hospital E-E: true error of the chosen candidate (best-single = edit-any-0.1) ===
+                           Q1    Q2    Q3  mean
+oracle                  0.024 0.000 0.046 0.023
+best-single             0.106 0.089 0.121 0.105
+exact                   0.024 0.533 0.046 0.201
+norm                    0.024 0.533 0.046 0.201
+hybrid-any-0.2          1.959 0.422 2.010 1.464
+hybrid-any-0.2+hardveto 1.856 0.000 1.913 1.256
+VetoQ-E(q=0.1)          0.028 0.482 0.048 0.186
+F1-E(q=0.1)             0.040 0.444 0.061 0.182
+VetoQ-E(q=0.3)          0.024 0.524 0.046 0.198
+F1-E(q=0.3)             0.024 0.533 0.046 0.201
+VetoQ-E(q=1.0)          0.024 0.533 0.046 0.201
+F1-E(q=1.0)             0.024 0.533 0.046 0.201

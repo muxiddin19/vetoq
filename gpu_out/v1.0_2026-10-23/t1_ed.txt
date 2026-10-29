@@ -1,0 +1,65 @@
+﻿[embedding_backend] loading sentence-transformers/all-MiniLM-L6-v2 on cpu
+[seed 0 rate 0.1] done
+[seed 0 rate 0.2] done
+[seed 0 rate 0.3] done
+[seed 1 rate 0.1] done
+[seed 1 rate 0.2] done
+[seed 1 rate 0.3] done
+[seed 2 rate 0.1] done
+[seed 2 rate 0.2] done
+[seed 2 rate 0.3] done
+[seed 3 rate 0.1] done
+[seed 3 rate 0.2] done
+[seed 3 rate 0.3] done
+[seed 4 rate 0.1] done
+[seed 4 rate 0.2] done
+[seed 4 rate 0.3] done
+
+=== E-D: true error of each candidate, mean over instances (lower is better) ===
+                         true_Q1  true_Q2  true_Q3  true_Q4  mean
+method                                                           
+hybrid-any-0.2+hardveto    0.017    0.278    0.043    0.017 0.088
+hybrid-any-0.2+softveto    0.321    0.039    0.498    0.300 0.289
+hybrid-all-0.3             0.063    1.017    0.090    0.057 0.307
+edit-all-0.3               0.043    1.122    0.075    0.038 0.320
+edit-any-0.2               0.581    0.100    0.894    0.550 0.531
+hybrid-any-0.2             0.570    0.144    0.875    0.547 0.534
+edit-any-0.3               0.600    0.156    0.908    0.569 0.558
+hybrid-all-0.2             0.050    2.272    0.099    0.049 0.617
+edit-all-0.2               0.050    2.372    0.101    0.049 0.643
+hybrid-all-0.2+softveto    0.060    2.367    0.132    0.060 0.654
+hybrid-any-0.1             0.260    2.028    0.431    0.232 0.738
+edit-any-0.1               0.261    2.128    0.433    0.234 0.764
+hybrid-all-0.2+hardveto    0.109    4.017    0.218    0.109 1.113
+emb-all-0.3                0.246    4.900    0.401    0.191 1.435
+hybrid-all-0.1             0.070    5.594    0.145    0.070 1.470
+edit-all-0.1               0.070    5.694    0.145    0.070 1.495
+emb-any-0.3                0.870    2.844    1.886    0.838 1.610
+emb-any-0.2                0.208    5.639    0.391    0.208 1.611
+emb-all-0.2                0.094    6.694    0.157    0.093 1.760
+emb-any-0.1                0.076    8.406    0.155    0.076 2.178
+emb-all-0.1                0.076    8.572    0.155    0.076 2.220
+norm                       0.078    9.283    0.156    0.078 2.399
+hybrid-any-0.3             2.362    0.572    6.552    2.362 2.962
+exact                      0.179   13.078    0.320    0.179 3.439
+
+=== best candidate per query (instances where it is best) ===
+Q1: hybrid-any-0.2+hardveto (14), edit-all-0.3 (1)
+Q2: hybrid-any-0.2+softveto (9), edit-any-0.2 (4), hybrid-any-0.2 (2)
+Q3: hybrid-any-0.2+hardveto (12), edit-all-0.3 (3)
+Q4: hybrid-any-0.2+hardveto (14), edit-all-0.3 (1)
+
+=== E-E: true error of the chosen candidate, mean over 15 instances (best-single = hybrid-any-0.2+hardveto) ===
+                  Q1     Q2    Q3    Q4  mean
+oracle         0.016  0.028 0.043 0.016 0.026
+best-single    0.017  0.278 0.043 0.017 0.088
+default-exact  0.179 13.078 0.320 0.179 3.439
+default-norm   0.078  9.283 0.156 0.078 2.399
+default-hybrid 0.570  0.144 0.875 0.547 0.534
+VetoQ-R        0.017  0.278 0.043 0.017 0.088
+VetoQ-E(q=0.1) 0.017  0.256 0.044 0.018 0.084
+F1-E(q=0.1)    0.017  0.278 0.043 0.017 0.088
+VetoQ-E(q=0.3) 0.016  0.072 0.043 0.016 0.037
+F1-E(q=0.3)    0.016  0.311 0.043 0.016 0.096
+VetoQ-E(q=1.0) 0.016  0.028 0.043 0.016 0.026
+F1-E(q=1.0)    0.016  0.311 0.043 0.016 0.096

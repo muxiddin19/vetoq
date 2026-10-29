@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this software or data, please cite it as below."
+title: "VetoQ: code, data and logs for 'Merges Are Not Splits: Operator-Aware Entity Equivalence for Semantic Queries over Dirty Keys'"
+type: software
+authors:
+  - family-names: Toshpulatov
+    given-names: Mukhiddin
+    affiliation: Gachon University
+    orcid: "https://orcid.org/0000-0002-8819-852X"
+  - family-names: Lee
+    given-names: Wookey
+    affiliation: Inha University
+    orcid: "https://orcid.org/0000-0001-8586-4577"
+  - family-names: Lee
+    given-names: Suan
+    affiliation: Semyung University
+    orcid: "https://orcid.org/0000-0002-3047-1167"
+repository-code: "https://github.com/muxiddin19/vetoq"
+license: MIT
+version: "1.0.0"
+date-released: "2026-10-29"
+keywords:
+  - entity resolution
+  - semantic query operators
+  - similarity group-by
+  - data cleaning

@@ -1,0 +1,77 @@
+dataset,inst,th,scored,closed,merge
+Hard-2000,Hard-2000 s0 r0.1,0.1,0,0,0.0
+Hard-2000,Hard-2000 s0 r0.1,0.3,0,0,0.0
+Hard-2000,Hard-2000 s0 r0.1,0.5,0,0,0.0
+Hard-2000,Hard-2000 s0 r0.1,0.9,0,0,0.0
+Hard-2000,Hard-2000 s0 r0.2,0.1,0,0,0.0
+Hard-2000,Hard-2000 s0 r0.2,0.3,0,0,0.0
+Hard-2000,Hard-2000 s0 r0.2,0.5,0,0,0.0
+Hard-2000,Hard-2000 s0 r0.2,0.9,0,0,0.0
+Hard-2000,Hard-2000 s0 r0.3,0.1,0,0,0.0
+Hard-2000,Hard-2000 s0 r0.3,0.3,0,0,0.0
+Hard-2000,Hard-2000 s0 r0.3,0.5,0,0,0.0
+Hard-2000,Hard-2000 s0 r0.3,0.9,0,0,0.0
+Hard-2000,Hard-2000 s1 r0.1,0.1,0,0,0.0
+Hard-2000,Hard-2000 s1 r0.1,0.3,0,0,0.0
+Hard-2000,Hard-2000 s1 r0.1,0.5,0,0,0.0
+Hard-2000,Hard-2000 s1 r0.1,0.9,0,0,0.0
+Hard-2000,Hard-2000 s1 r0.2,0.1,0,0,0.0
+Hard-2000,Hard-2000 s1 r0.2,0.3,0,0,0.0
+Hard-2000,Hard-2000 s1 r0.2,0.5,0,0,0.0
+Hard-2000,Hard-2000 s1 r0.2,0.9,0,0,0.0
+Hard-2000,Hard-2000 s1 r0.3,0.1,0,0,0.0
+Hard-2000,Hard-2000 s1 r0.3,0.3,0,0,0.0
+Hard-2000,Hard-2000 s1 r0.3,0.5,0,0,0.0
+Hard-2000,Hard-2000 s1 r0.3,0.9,0,0,0.0
+Hard-2000,Hard-2000 s2 r0.1,0.1,0,0,0.0
+Hard-2000,Hard-2000 s2 r0.1,0.3,0,0,0.0
+Hard-2000,Hard-2000 s2 r0.1,0.5,0,0,0.0
+Hard-2000,Hard-2000 s2 r0.1,0.9,0,0,0.0
+Hard-2000,Hard-2000 s2 r0.2,0.1,0,0,0.0
+Hard-2000,Hard-2000 s2 r0.2,0.3,0,0,0.0
+Hard-2000,Hard-2000 s2 r0.2,0.5,0,0,0.0
+Hard-2000,Hard-2000 s2 r0.2,0.9,0,0,0.0
+Hard-2000,Hard-2000 s2 r0.3,0.1,0,0,0.0
+Hard-2000,Hard-2000 s2 r0.3,0.3,0,0,0.0
+Hard-2000,Hard-2000 s2 r0.3,0.5,0,0,0.0
+Hard-2000,Hard-2000 s2 r0.3,0.9,0,0,0.0
+Hard-2000,Hard-2000 s3 r0.1,0.1,0,0,0.0
+Hard-2000,Hard-2000 s3 r0.1,0.3,0,0,0.0
+Hard-2000,Hard-2000 s3 r0.1,0.5,0,0,0.0
+Hard-2000,Hard-2000 s3 r0.1,0.9,0,0,0.0
+Hard-2000,Hard-2000 s3 r0.2,0.1,0,0,0.0
+Hard-2000,Hard-2000 s3 r0.2,0.3,0,0,0.0
+Hard-2000,Hard-2000 s3 r0.2,0.5,0,0,0.0
+Hard-2000,Hard-2000 s3 r0.2,0.9,0,0,0.0
+Hard-2000,Hard-2000 s3 r0.3,0.1,0,0,0.0
+Hard-2000,Hard-2000 s3 r0.3,0.3,0,0,0.0
+Hard-2000,Hard-2000 s3 r0.3,0.5,0,0,0.0
+Hard-2000,Hard-2000 s3 r0.3,0.9,0,0,0.0
+Hard-2000,Hard-2000 s4 r0.1,0.1,0,0,0.0
+Hard-2000,Hard-2000 s4 r0.1,0.3,0,0,0.0
+Hard-2000,Hard-2000 s4 r0.1,0.5,0,0,0.0
+Hard-2000,Hard-2000 s4 r0.1,0.9,0,0,0.0
+Hard-2000,Hard-2000 s4 r0.2,0.1,0,0,0.0
+Hard-2000,Hard-2000 s4 r0.2,0.3,0,0,0.0
+Hard-2000,Hard-2000 s4 r0.2,0.5,0,0,0.0
+Hard-2000,Hard-2000 s4 r0.2,0.9,0,0,0.0
+Hard-2000,Hard-2000 s4 r0.3,0.1,0,0,0.0
+Hard-2000,Hard-2000 s4 r0.3,0.3,0,0,0.0
+Hard-2000,Hard-2000 s4 r0.3,0.5,0,0,0.0
+Hard-2000,Hard-2000 s4 r0.3,0.9,0,0,0.0
+Hospital,Hospital,0.1,1975,1975,0.2
+Hospital,Hospital,0.3,1348,1375,0.151
+Hospital,Hospital,0.5,0,0,0.0
+Hospital,Hospital,0.9,0,0,0.0
+Beers,Beers,0.1,578,578,0.06763485477178423
+Beers,Beers,0.3,132,132,0.04024896265560166
+Beers,Beers,0.5,132,132,0.04024896265560166
+Beers,Beers,0.9,111,120,0.036929460580912864
+MusicBrainz,MusicBrainz s0,0.1,48,113,0.03604531410916581
+MusicBrainz,MusicBrainz s0,0.3,0,0,0.0
+MusicBrainz,MusicBrainz s0,0.5,0,0,0.0
+MusicBrainz,MusicBrainz s0,0.9,0,0,0.0
+Settlements,Settlements s0,0.1,219,3766,1.271604938271605
+Settlements,Settlements s0,0.3,38,175,0.06367771280051981
+Settlements,Settlements s0,0.5,10,21,0.008447043534762833
+Settlements,Settlements s0,0.9,10,21,0.008447043534762833

@@ -1,0 +1,35 @@
+﻿[embedding_backend] loading sentence-transformers/all-MiniLM-L6-v2 on cpu
+
+--- synonym pairs (want HIGH sim) ---
+     NYC ~ New York         sim=0.938
+     NYC ~ New York City    sim=0.918
+     USA ~ United States    sim=0.894
+      UK ~ United Kingdom   sim=0.787
+      LA ~ Los Angeles      sim=0.842
+      SF ~ San Francisco    sim=0.811
+--- distinct pairs (want LOW sim) ---
+       IRAN ~ IRAQ          sim=0.674
+    Austria ~ Australia     sim=0.639
+   Slovakia ~ Slovenia      sim=0.722
+      Niger ~ Nigeria       sim=0.830
+     Sweden ~ Switzerland   sim=0.674
+      Chile ~ China         sim=0.527
+
+min synonym sim = 0.787   max distinct sim = 0.830
+GLOBAL SEPARABILITY (a single eps splits all): NO  (gap = -0.043)
+
+Per-eps confusion (merge if sim >= 1-eps):
+  eps |   thr | syn merged | dis WRONGLY merged
+  0.2 |  0.80 |   5/6      |   1/6             
+  0.3 |  0.70 |   6/6      |   2/6             
+  0.4 |  0.60 |   6/6      |   5/6             
+  0.5 |  0.50 |   6/6      |   6/6             
+
+HYPOTHESIS GATE:
+  PARTIAL/FAIL — no global threshold separates. Escalate to context-aware equivalence (Def 8, working doc) and report the per-eps tradeoff curve as the finding.
+
+--- Prop 3 probe (TPC-H ambiguity zone; not part of the gate) ---
+  pair           edit-ratio  emb sim  emb dist
+  IRAN~IRNA           0.750    0.281     0.719
+  IRAN~IRN            0.857    0.283     0.717
+  IRAN~IRAQ           0.750    0.674     0.326

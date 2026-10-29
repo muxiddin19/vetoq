@@ -1,0 +1,63 @@
+[embedding_backend] loading sentence-transformers/all-MiniLM-L6-v2 on cpu
+[Hard-2000] done
+[Hospital] done
+[Beers] done
+[MusicBrainz] done
+[Settlements] done
+[Affiliations] done
+
+=== graph structure at eps (value-level hybrid) ===
+     dataset    n  nodes  intra_edges  inter_edges_at_eps  bridge_share  base_split  base_merge
+   Hard-2000 2000    152          719                 156         0.003       0.005       0.000
+    Hospital 1000     69           29                  30         0.414       0.001       0.000
+       Beers 2410    558            0                3640         0.000       0.000       0.000
+ MusicBrainz 1942   1925          496                  64         0.623       0.275       0.000
+ Settlements 1539   1327         1304                 183         0.099       0.077       0.000
+Affiliations 2260   2257         6036                9326         0.038       0.299       0.000
+
+=== tuple mass moved per injected error event (fraction of n), mean over trials ===
+error            merge-next  merge-random  split
+dataset      k                                  
+Affiliations 1       0.0022        0.0020 0.0000
+             2       0.0031        0.0016 0.0000
+             5       0.0023        0.0018 0.0000
+             10      0.0024        0.0020 0.0000
+             20      0.0029        0.0019 0.0000
+Beers        1       0.0014        0.0011 0.0000
+             2       0.0013        0.0011 0.0000
+             5       0.0014        0.0010 0.0000
+             10      0.0012        0.0009 0.0000
+             20      0.0011        0.0009 0.0000
+Hard-2000    1       0.0833        0.0693 0.0000
+             2       0.0791        0.0746 0.0000
+             5       0.0542        0.0769 0.0000
+             10      0.0329        0.0650 0.0000
+             20      0.0185        0.0432 0.0000
+Hospital     1       0.0147        0.0184 0.0006
+             2       0.0186        0.0213 0.0004
+             5       0.0198        0.0210 0.0005
+             10      0.0206        0.0202 0.0006
+             20      0.0196        0.0204 0.0007
+MusicBrainz  1       0.0005        0.0006 0.0004
+             2       0.0006        0.0006 0.0003
+             5       0.0006        0.0006 0.0003
+             10      0.0006        0.0006 0.0002
+             20      0.0006        0.0006 0.0003
+Settlements  1       0.0026        0.0021 0.0000
+             2       0.0018        0.0020 0.0000
+             5       0.0019        0.0021 0.0000
+             10      0.0020        0.0020 0.0001
+             20      0.0016        0.0019 0.0001
+
+=== share of removed intra edges that were bridges ===
+k              1    2    5    10   20
+dataset                              
+Affiliations 0.05 0.05 0.03 0.04 0.05
+Hard-2000    0.00 0.00 0.01 0.01 0.01
+Hospital     0.60 0.40 0.43 0.45 0.40
+MusicBrainz  0.75 0.68 0.62 0.57 0.64
+Settlements  0.05 0.05 0.08 0.11 0.11
+
+=== ratio: merge mass per event / split mass per event (k = 1 and 5) ===
+k=1: Affiliations: next 100.0x, random 89.0x, Beers: next 1431535.3x, random 1078838.2x, Hard-2000: next 83350000.0x, random 69350000.0x, Hospital: next 24.6x, random 30.8x, MusicBrainz: next 1.4x, random 1.7x, Settlements: next 80.0x, random 64.0x
+k=5: Affiliations: next 88.5x, random 66.2x, Beers: next 1365145.2x, random 1020746.9x, Hard-2000: next 5422.5x, random 7692.5x, Hospital: next 36.7x, random 38.8x, MusicBrainz: next 1.9x, random 1.9x, Settlements: next 42.1x, random 45.4x

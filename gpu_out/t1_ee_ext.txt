@@ -1,0 +1,37 @@
+[embedding_backend] loading sentence-transformers/all-MiniLM-L6-v2 on cpu
+[seed 0 rate 0.1] rows 5412, Splink 11s
+[seed 0 rate 0.2] rows 5412, Splink 10s
+[seed 0 rate 0.3] rows 5412, Splink 11s
+[seed 1 rate 0.1] rows 5412, Splink 11s
+[seed 1 rate 0.2] rows 5412, Splink 10s
+[seed 1 rate 0.3] rows 5412, Splink 9s
+[seed 2 rate 0.1] rows 5412, Splink 12s
+[seed 2 rate 0.2] rows 5412, Splink 11s
+[seed 2 rate 0.3] rows 5412, Splink 10s
+[seed 3 rate 0.1] rows 5412, Splink 12s
+[seed 3 rate 0.2] rows 5412, Splink 10s
+[seed 3 rate 0.3] rows 5412, Splink 11s
+[seed 4 rate 0.1] rows 5412, Splink 11s
+[seed 4 rate 0.2] rows 5412, Splink 10s
+[seed 4 rate 0.3] rows 5412, Splink 9s
+
+=== E-E with external candidates: true error of the chosen equivalence, mean over 15 Hard-multi instances ===
+                        Q1    Q2    Q3    Q4  mean
+base: oracle         0.016 0.028 0.043 0.016 0.026
+base: VetoQ-E(q=0.1) 0.017 0.128 0.044 0.018 0.052
+base: VetoQ-E(q=0.3) 0.016 0.094 0.043 0.016 0.042
+base: VetoQ-E(q=1.0) 0.016 0.028 0.043 0.016 0.026
+ext: oracle          0.016 0.028 0.043 0.016 0.026
+ext: VetoQ-E(q=0.1)  0.017 0.128 0.044 0.018 0.052
+ext: VetoQ-E(q=0.3)  0.016 0.083 0.043 0.016 0.039
+ext: VetoQ-E(q=1.0)  0.016 0.028 0.043 0.016 0.026
+Splink default       0.033 1.717 0.065 0.033 0.462
+hard veto            0.017 0.278 0.043 0.017 0.088
+
+share of (instance, query) choices of VetoQ-E on the ext pool that pick a Splink candidate: q=0.1: 0.00, q=0.3: 0.02, q=1.0: 0.00
+
+per query, instances where a Splink candidate is the oracle choice (ext pool):
+  Q1: 0 of 15
+  Q2: 0 of 15
+  Q3: 0 of 15
+  Q4: 0 of 15

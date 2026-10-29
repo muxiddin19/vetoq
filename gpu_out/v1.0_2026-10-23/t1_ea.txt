@@ -1,0 +1,90 @@
+﻿[embedding_backend] loading sentence-transformers/all-MiniLM-L6-v2 on cpu
+[Hard-2000 s0 r0.1] rows=2000 entities=12 keys=105 12s
+[Hard-2000 s0 r0.2] rows=2000 entities=12 keys=151 1s
+[Hard-2000 s0 r0.3] rows=2000 entities=12 keys=166 1s
+[Hard-2000 s1 r0.1] rows=2000 entities=12 keys=109 1s
+[Hard-2000 s1 r0.2] rows=2000 entities=12 keys=142 1s
+[Hard-2000 s1 r0.3] rows=2000 entities=12 keys=168 1s
+[Hard-2000 s2 r0.1] rows=2000 entities=12 keys=112 1s
+[Hard-2000 s2 r0.2] rows=2000 entities=12 keys=150 1s
+[Hard-2000 s2 r0.3] rows=2000 entities=12 keys=155 1s
+[Hard-2000 s3 r0.1] rows=2000 entities=12 keys=101 1s
+[Hard-2000 s3 r0.2] rows=2000 entities=12 keys=146 1s
+[Hard-2000 s3 r0.3] rows=2000 entities=12 keys=156 1s
+[Hard-2000 s4 r0.1] rows=2000 entities=12 keys=100 1s
+[Hard-2000 s4 r0.2] rows=2000 entities=12 keys=159 1s
+[Hard-2000 s4 r0.3] rows=2000 entities=12 keys=160 1s
+[Hospital] rows=1000 entities=45 keys=69 1s
+[Beers] rows=2410 entities=558 keys=551 12s
+[MusicBrainz s0] rows=1942 entities=1000 keys=1912 137s
+[Settlements s0] rows=1539 entities=400 keys=1325 25s
+[MusicBrainz s1] rows=1937 entities=1000 keys=1907 140s
+[Settlements s1] rows=1538 entities=400 keys=1331 24s
+[MusicBrainz s2] rows=1892 entities=1000 keys=1868 142s
+[Settlements s2] rows=1550 entities=400 keys=1329 23s
+[Affiliations] rows=2260 entities=330 keys=2257 284s
+
+=== E-A (1): share of method pairs where ER metric order disagrees with operator-error order ===
+
+[ALL]  instances=24  methods/instance=24
+metric       COUNT_err       SUM_err        CD_err  JOIN_FP_rate  JOIN_FN_rate
+pairF1           0.058         0.090         0.420         0.231         0.450
+B3F1             0.112         0.144         0.366         0.292         0.398
+VI               0.123         0.153         0.352         0.301         0.385
+BMD              0.420         0.449         0.074         0.599         0.112
+
+[Affiliations]  instances=1  methods/instance=20
+metric       COUNT_err       SUM_err        CD_err  JOIN_FP_rate  JOIN_FN_rate
+pairF1           0.247         0.337         0.442         0.450         0.489
+B3F1             0.395         0.495         0.305         0.598         0.353
+VI               0.158         0.258         0.521         0.360         0.579
+BMD              0.663         0.763         0.089         0.868         0.074
+
+[Beers]  instances=1  methods/instance=24
+metric       COUNT_err       SUM_err        CD_err  JOIN_FP_rate  JOIN_FN_rate
+pairF1           0.025         0.036         0.073         0.004         0.873
+B3F1             0.033         0.044         0.015         0.062         0.762
+VI               0.011         0.022         0.036         0.040         0.794
+BMD              0.047         0.058         0.000         0.076         0.762
+
+[Hard-2000]  instances=15  methods/instance=24
+metric       COUNT_err       SUM_err        CD_err  JOIN_FP_rate  JOIN_FN_rate
+pairF1           0.027         0.028         0.513         0.176         0.516
+B3F1             0.058         0.060         0.487         0.209         0.487
+VI               0.128         0.126         0.411         0.288         0.418
+BMD              0.505         0.502         0.049         0.672         0.092
+
+[Hospital]  instances=1  methods/instance=24
+metric       COUNT_err       SUM_err        CD_err  JOIN_FP_rate  JOIN_FN_rate
+pairF1           0.060         0.045         0.477         0.037         0.730
+B3F1             0.082         0.075         0.434         0.090         0.753
+VI               0.119         0.104         0.414         0.097         0.668
+BMD              0.391         0.383         0.301         0.375         0.391
+
+[MusicBrainz]  instances=3  methods/instance=24
+metric       COUNT_err       SUM_err        CD_err  JOIN_FP_rate  JOIN_FN_rate
+pairF1           0.171         0.344         0.172         0.398         0.157
+B3F1             0.301         0.474         0.038         0.533         0.024
+VI               0.142         0.313         0.192         0.369         0.189
+BMD              0.257         0.423         0.074         0.484         0.078
+
+[Settlements]  instances=3  methods/instance=24
+metric       COUNT_err       SUM_err        CD_err  JOIN_FP_rate  JOIN_FN_rate
+pairF1           0.072         0.119         0.302         0.399         0.279
+B3F1             0.162         0.209         0.207         0.494         0.193
+VI               0.112         0.159         0.272         0.429         0.253
+BMD              0.244         0.292         0.147         0.569         0.113
+
+=== E-A (2): regret of choosing the equivalence by an ER metric (mean over instances, ALL) ===
+chooser        COUNT_err       SUM_err        CD_err  JOIN_FP_rate  JOIN_FN_rate
+pairF1            0.0120        0.0403        0.2470        0.0401        0.0700
+B3F1              0.0120        0.0373        0.2434        0.0432        0.0696
+VI                0.0034        0.0205        0.2582        0.0363        0.0712
+BMD              20.2175       33.4185        0.1830        0.1182        0.0383
+
+=== best method per operator (count of instances where it is best) ===
+COUNT_err      hybrid-any-0.2+hardveto (13), hybrid-all-0.3 (3), exact (2), hybrid-any-0.2+softveto (2), emb-all-0.3 (2)
+SUM_err        hybrid-any-0.2+hardveto (13), exact (2), hybrid-any-0.2+softveto (2), hybrid-all-0.2+softveto (2), hybrid-all-0.2 (2)
+CD_err         hybrid-any-0.2 (8), hybrid-any-0.2+softveto (5), edit-any-0.2 (3), hybrid-any-0.3 (3), edit-any-0.3 (2)
+JOIN_FP_rate   exact (15), hybrid-all-0.2+hardveto (4), hybrid-any-0.2+hardveto (3), hybrid-all-0.2+softveto (1), norm (1)
+JOIN_FN_rate   hybrid-any-0.3 (22), exact (1), edit-any-0.3 (1)

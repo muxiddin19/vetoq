@@ -1,0 +1,32 @@
+[embedding_backend] loading sentence-transformers/all-MiniLM-L6-v2 on cpu
+[seed 0] done
+[seed 1] done
+[seed 2] done
+[seed 3] done
+[seed 4] done
+
+=== E-C: formula vs execution, 160 (table, method) cases ===
+  COUNT           mismatches: 0
+  SUM             mismatches: 0
+  COUNT_DISTINCT  mismatches: 0
+  JOIN            mismatches: 0
+  SELECT          mismatches: 0
+
+=== E-A (preliminary, Hard-2000): share of method pairs where ER metric and operator error disagree ===
+metric       COUNT_err       SUM_err        CD_err  JOIN_FP_rate  JOIN_FN_rate
+pairF1      0.051 (505)    0.055 (505)    0.440 (496)    0.081 (422)    0.496 (405)
+B3F1        0.089 (505)    0.093 (505)    0.401 (496)    0.126 (422)    0.449 (405)
+VI          0.186 (505)    0.190 (505)    0.302 (496)    0.242 (422)    0.328 (405)
+BMD         0.387 (501)    0.391 (501)    0.093 (492)    0.483 (418)    0.072 (401)
+
+=== mean per method ===
+                                         pairF1  B3F1    VI    BMD        M       S  COUNT_err  SUM_err  CD_err  JOIN_FP_rate  JOIN_FN_rate
+method                                                                                                                                     
+Exact SQL                                 0.860 0.860 0.610 95.500    0.000 260.300      0.130    0.130   7.917         0.000         0.231
+Normalize + Exact                         0.946 0.946 0.281 61.350    0.000 106.300      0.054    0.052   5.071         0.000         0.100
+Edit-Distance                             0.781 0.837 0.417  7.300 1062.100  25.350      0.541    0.546   0.167         0.347         0.022
+Vector-Only                               0.883 0.915 0.343 46.700  322.000  88.650      0.192    0.194   3.442         0.145         0.084
+Hybrid (no veto)                          0.788 0.842 0.387  5.100 1062.100   9.550      0.533    0.539   0.142         0.344         0.008
+Hybrid + Context Veto (raw, Def 8)        0.990 0.989 0.041  3.000    0.000  23.200      0.012    0.012   0.250         0.000         0.020
+VetoQ (Hybrid + Pre-canon Context Veto)   0.962 0.961 0.168 19.200    0.000  79.250      0.040    0.040   1.600         0.000         0.072
+Hybrid + Soft Veto (theta=0.5, E17)       0.910 0.941 0.159  3.150  403.150   9.550      0.206    0.209   0.079         0.152         0.008

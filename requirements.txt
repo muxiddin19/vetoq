@@ -1,0 +1,14 @@
+# Direct dependencies of exp_t1/ (pinned to the versions of the 2026-10-24 rerun; full freeze: requirements-lock.txt)
+# torch: install from https://download.pytorch.org/whl/cu126 (see setup_env.sh)
+pandas==3.0.6
+numpy==2.4.3
+scipy==1.18.1
+scikit-learn==1.9.0
+networkx==3.7
+matplotlib==3.11.2
+sentence-transformers==6.1.0
+transformers==5.19.0
+torch==2.10.0
+splink==5.0.0
+duckdb==2.0.0
+anthropic==2.3.0
