@@ -1,5 +1,7 @@
 # VetoQ: Operator-Aware Entity Equivalence for Semantic Queries over Dirty Keys
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23756806.svg)](https://doi.org/10.5281/zenodo.23756806)
+
 Code, data and experiment logs for the paper
 
 > **Merges Are Not Splits: Operator-Aware Entity Equivalence for Semantic Queries over Dirty Keys**
@@ -89,7 +91,10 @@ The third-party datasets are redistributed unchanged for reproducibility; please
 
 ## Citation
 
-See [`CITATION.cff`](CITATION.cff). Until the paper is published, please cite this repository.
+See [`CITATION.cff`](CITATION.cff). Until the paper is published, please cite this repository:
+
+> M. Toshpulatov, W. Lee, and S. Lee, "Merges are not splits: Technical report, code, data and logs," 2026,
+> doi: [10.5281/zenodo.23756806](https://doi.org/10.5281/zenodo.23756806).
 
 ## License
 
