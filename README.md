@@ -59,7 +59,7 @@ Run `run_ea.py` first: the E-G, E-H and figure scripts read its `t1_ea.csv`.
 | E-C exactness | §VII | `run_ec_ea.py` | `t1_ec_ea.txt` |
 | E-A metrics vs. operator errors | Fig. 1, Tables V, VII | `run_ea.py` | `t1_ea.txt`, `t1_ea.csv` |
 | E-B closure asymmetry | Table VI | `run_eb.py` | `t1_eb.txt` |
-| E-D pipelines and choosers (Hard-multi) | Tables VIII, IX | `run_ed.py` (`--wit-noise 0.1` for the noisy witness) | `t1_ed*.txt` |
+| E-D pipelines and choosers (Hard-multi) | Tables VIII, IX | `run_ed.py` (`--wit-noise 0.1` for the noisy witness); `check_ed_mixed.py` for the mixed mass of the Context Veto candidates (§VII-D) | `t1_ed*.txt` |
 | E-E real data (Hospital), Splink candidates | Table IX | `run_ee_real.py`, `run_ee_ext.py` | `t1_ee_*.txt` |
 | E-G LLM-based grouping | Table X | `run_eg.py`, `analyze_eg.py` | `t1_eg_*.txt` |
 | E-H Splink | Tables XI, XII | `run_eh.py`, `analyze_eh.py`, `run_eh_closure.py` | `t1_eh*.txt` |
@@ -80,6 +80,9 @@ Notes on reproducibility:
   (context similarity ≥ 0.5 counts as a match) and `"canon"` (context values clustered by complete linkage at
   distance ε; two contexts match iff they share a cluster). Version 1.0.0 lacked `ctx_mode`, so
   `run_ec_ea.py` failed; from 1.0.1 it reproduces `gpu_out/t1_ec_ea.txt` byte for byte.
+- Version 1.0.2 adds `exp_t1/check_ed_mixed.py` (run as `edx` by `run_all.sh`), which writes
+  `gpu_out/t1_ed_mixed.txt`: the hard Context Veto has mixed mass X = 0 (collapse-free) on all 15 Hard-multi
+  instances under both linkages.
 
 ## Data
 

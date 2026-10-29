@@ -3,7 +3,7 @@
 # so running them in place would overwrite the logs the paper cites).
 #
 # Usage: bash exp_t1/run_all.sh [WORKDIR]            (default: ../VetoQ_repro_<date>)
-#        ONLY="ec ed" bash exp_t1/run_all.sh          run a subset: ec ea eb ed ednoise eer eex ehc eg eh ef fig
+#        ONLY="ec ed" bash exp_t1/run_all.sh          run a subset: ec ea eb ed edx ednoise eer eex ehc eg eh ef fig
 # Runtime on 32 CPU threads: about 45 min in total (E-A 12-27 min, E-F 23 min, the rest 1-6 min each).
 # E-G reads the answer cache gpu_out/t1_eg_cache_hf_Qwen2.5-1.5B-Instruct.json; without it, it needs ~4.7 CPU-hours.
 # Numbers in the paper are CPU runs: CUDA_VISIBLE_DEVICES="" is set below.
@@ -12,7 +12,7 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 WORK="${1:-$ROOT/../VetoQ_repro_$(date +%Y%m%d_%H%M)}"
 PY="$ROOT/.venv/bin/python"
 [[ -x $PY ]] || PY="$ROOT/.venv/Scripts/python.exe"   # uv venv on Windows (Git Bash)
-ONLY="${ONLY:-ec ea eb ed ednoise eer eex ehc eg eh ef fig}"
+ONLY="${ONLY:-ec ea eb ed edx ednoise eer eex ehc eg eh ef fig}"
 export CUDA_VISIBLE_DEVICES="" HF_HUB_DISABLE_PROGRESS_BARS=1 PYTHONUTF8=1
 
 mkdir -p "$WORK"
@@ -34,6 +34,7 @@ run ec      t1_ec_ea.txt             exp_t1/run_ec_ea.py            # imports it
 run ea      t1_ea.txt                -P exp_t1/run_ea.py
 run eb      t1_eb.txt                -P exp_t1/run_eb.py
 run ed      t1_ed.txt                -P exp_t1/run_ed.py
+run edx     t1_ed_mixed.txt          -P exp_t1/check_ed_mixed.py
 run ednoise t1_ed_witnoise0.1.txt    -P exp_t1/run_ed.py --wit-noise 0.1 --tag _witnoise0.1
 run eer     t1_ee_hospital.txt       -P exp_t1/run_ee_real.py
 run eex     t1_ee_ext.txt            -P exp_t1/run_ee_ext.py
