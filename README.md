@@ -5,7 +5,7 @@
 Code, data and experiment logs for the paper
 
 > **Merges Are Not Splits: Operator-Aware Entity Equivalence for Semantic Queries over Dirty Keys**
-> Mukhiddin Toshpulatov (Gachon University), Wookey Lee (Inha University), Suan Lee (Semyung University).
+> Wookey Lee, Charles Cheolgi Lee, Youn-Kyoung Seo (Inha University), Mukhiddin Toshpulatov (Gachon University; corresponding author).
 > Submitted to ICDE 2027.
 
 Semantic query operators group and join dirty keys by similarity. The induced equivalence errs in two ways:
@@ -98,7 +98,7 @@ The third-party datasets are redistributed unchanged for reproducibility; please
 
 See [`CITATION.cff`](CITATION.cff). Until the paper is published, please cite this repository:
 
-> M. Toshpulatov, W. Lee, and S. Lee, "Merges are not splits: Technical report, code, data and logs," 2026,
+> W. Lee, C. C. Lee, Y.-K. Seo, and M. Toshpulatov, "Merges are not splits: Technical report, code, data and logs," 2026,
 > doi: [10.5281/zenodo.23756806](https://doi.org/10.5281/zenodo.23756806).
 
 ## License
